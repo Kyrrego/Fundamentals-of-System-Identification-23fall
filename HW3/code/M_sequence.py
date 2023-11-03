@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# 生成M序列
+# Generate M-sequence
 def generate_m_sequence(N):
-    # 初始化状态寄存器（LFSR）
-    register = np.ones(N)
+    # Initialize the state register (LFSR)
+    register = np.array([1] * N, dtype=int)  # Initialize with binary values
     m_sequence = []
 
     for _ in range(2**N - 1):
@@ -15,15 +15,15 @@ def generate_m_sequence(N):
 
     return np.array(m_sequence)
 
-# 产生M序列
-N = 5  # 寄存器长度
+# Generate an M-sequence
+N = 5  # Register length
 m_sequence = generate_m_sequence(N)
 
-# 生成白噪声
+# Generate white noise
 num_samples = len(m_sequence)
 white_noise = np.random.choice([0, 1], size=num_samples)
 
-# 绘制M序列和白噪声
+# Plot the M-sequence and white noise
 time = np.arange(0, num_samples)
 
 plt.figure(figsize=(12, 6))
