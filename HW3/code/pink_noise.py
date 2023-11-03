@@ -57,7 +57,7 @@ plt.show()
 
 # 绘制白噪声的功率谱密度函数
 plt.figure(figsize=(8, 6))
-plt.plot(frequencies, white_psd)
+plt.plot(white_psd)
 plt.title('White Noise Power Spectral Density (PSD)')
 plt.xlabel('Frequency')
 plt.ylabel('Power')
